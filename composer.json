@@ -1,4 +1,6 @@
 {
+    "name": "birdsinthesun/rats",
+    "description": "A short description of what your package does",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
