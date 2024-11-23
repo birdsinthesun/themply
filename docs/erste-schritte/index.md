@@ -1,4 +1,4 @@
-# Anleitung Microservice #
+# Erste Schritte Microservice #
 
 
 1. Windows PowerShell herunterladen und installieren
@@ -11,9 +11,6 @@
 
 ### wichtige Doku Links ###
 https://symfony.com/doc/current/index.html
-
-
-
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 https://symfony.com/doc/current/frontend/asset_mapper.html
 https://symfony.com/bundles/SassBundle/current/index.html
