@@ -10,15 +10,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "symfony/apache-pack": "^1.0",
-        "symfony/asset": "^6.4",
-        "symfony/asset-mapper": "7.0.8",
-        "symfony/console": "7.0.8",
-        "symfony/dotenv": "7.0.*",
+        "symfony/asset": "6.4.*",
+        "symfony/asset-mapper": "6.4.*",
+        "symfony/console": "6.4.*",
+        "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2.4",
-        "symfony/framework-bundle": "7.0.10",
-        "symfony/runtime": "7.0.*",
-        "symfony/twig-bundle": "7.0.8",
-        "symfony/yaml": "7.0.8",
+        "symfony/framework-bundle": "6.4.*",
+        "symfony/runtime": "6.4.*",
+        "symfony/twig-bundle": "6.4.*",
+        "symfony/yaml": "6.4.*",
         "symfonycasts/sass-bundle": "^0.8.2",
         "thomaspark/bootswatch": "^5.3",
         "twbs/bootstrap": "^5.3",
@@ -72,7 +72,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "7.0.*"
+            "require": "6.4.*"
         }
     }
 }
