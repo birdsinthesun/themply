@@ -54,6 +54,8 @@ https://bootswatch.com/lux/
     composer require twbs/bootstrap
     composer require symfonycasts/sass-bundle
     composer require thomaspark/bootswatch
+    composer require symfony/runtime
+    composer require symfony/runtime
     composer clear-cache
     composer cache:clear
     composer update
