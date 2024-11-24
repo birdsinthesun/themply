@@ -1,6 +1,6 @@
 <?php
 
-namespace namespace Bits\Themply;
+namespace Bits\Themply;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

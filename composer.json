@@ -9,7 +9,7 @@
     ],
     "type": "contao-module",
     "license": "MIT",
-    "version":"1.1.0",
+    "version":"dev-main",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "authors": [
@@ -29,7 +29,6 @@
     },
     "require": {
         "php": ">=8.2",
-        "contao/core-bundle": "^5.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "symfony/apache-pack": "^1.0",
@@ -46,7 +45,8 @@
         "thomaspark/bootswatch": "^5.3",
         "twbs/bootstrap": "^5.3",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "contao/core-bundle": "^5.4"
     },
     "config": {
         "allow-plugins": {
@@ -102,10 +102,11 @@
         "symfony/symfony": "*"
     },
     "extra": {
+         
+     "contao-manager-plugin": "Bits\\Themply\\ContaoManager\\Plugin",
         "symfony": {
             "allow-contrib": false,
             "require": "6.4.*"
-        },
-        "contao-manager-plugin": "Bits\\Themply\\ContaoManager\\Plugin"
+        }
     }
 }

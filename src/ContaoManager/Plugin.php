@@ -14,7 +14,7 @@ class Plugin implements BundlePluginInterface
     {
         return [
             BundleConfig::create(ThemplyBundle::class)
-                ->setLoadAfter([ThemplyBundle::class]),
+                ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 }
