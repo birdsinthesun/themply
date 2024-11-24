@@ -1,8 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
-namespace namespace Bits\Themply\EventListener;
+namespace Bits\Themply\EventListener;
 
 use Contao\Controller;
 use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
