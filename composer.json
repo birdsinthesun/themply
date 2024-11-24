@@ -30,6 +30,7 @@
         "symfony/asset-mapper": "6.4.*",
         "symfony/dotenv": "6.4.*",
         "symfony/framework-bundle": "6.4.*",
+        "symfony/config": "6.4.*",
         "symfony/console": "6.4.*",
         "symfony/runtime": "6.4.*",
         "symfony/twig-bundle": "6.4.*",
@@ -52,7 +53,16 @@
     "autoload": {
         "psr-4": {
             "Bits\\Themply\\": "src/"
-        }
+        },
+        "classmap": [
+            "contao/"
+        ],
+        "exclude-from-classmap": [
+            "contao/config/",
+            "contao/dca/",
+            "contao/languages/",
+            "contao/templates/"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

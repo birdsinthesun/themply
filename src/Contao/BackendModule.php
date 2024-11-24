@@ -1,3 +1,5 @@
+<?php
+
 // src/Contao/BackendModule.php
 namespace Bits\Themply\Contao;
 

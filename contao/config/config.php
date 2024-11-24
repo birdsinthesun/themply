@@ -1,3 +1,4 @@
+<?php
 // src/Resources/config/config.php
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -11,7 +12,10 @@ $GLOBALS['BE_MOD']['design'] = [
 'themply' => [
 'tables' => ['tl_themply'],
 'icon' => 'birdsinthesun/themply/icon.png',
- 'callback' => \Bits\Themply\Contao\BackendModule::class
+ 'callback' => \Bits\Themply\Contao\ThemplyModule::class
 ],
 ];
 };
+
+
+?>
