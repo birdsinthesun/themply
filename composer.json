@@ -3,6 +3,7 @@
     "description": "A short description of what your package does",
     "type": "library",
     "license": "MIT",
+     "version":"1.1.0",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
