@@ -1,9 +1,9 @@
 {
     "name": "birdsinthesun/themply",
     "description": "A short description of what your package does",
-    "type": "library",
+    "type": "contao-module",
     "license": "MIT",
-     "version":"1.1.0",
+    "version":"1.1.0",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
@@ -23,7 +23,8 @@
         "thomaspark/bootswatch": "^5.3",
         "twbs/bootstrap": "^5.3",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "contao/core-bundle": "^5.4"
     },
     "config": {
         "allow-plugins": {
@@ -35,7 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "birdsinthesun\\themply\\": "src/"
         }
     },
     "autoload-dev": {
