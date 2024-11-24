@@ -6,6 +6,14 @@
     "version":"1.1.0",
     "minimum-stability": "stable",
     "prefer-stable": true,
+     "authors": [
+        {
+            "name": "Monique Hahnefeld",
+            "email": "hello@bits-design.de",
+            "homepage": "https://bits-desdign.de",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
