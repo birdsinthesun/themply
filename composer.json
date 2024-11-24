@@ -20,6 +20,7 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/birdsinthesun/themply"
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
