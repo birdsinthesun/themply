@@ -7,7 +7,7 @@ return static function (ContainerConfigurator $containerConfigurator) {
 $services = $containerConfigurator->services();
 
 // Registriere das Backend-Modul
-$GLOBALS['BE_MOD']['themply'] = [
+$GLOBALS['BE_MOD']['tl_modules'] = [
 'themply' => [
 'tables' => ['tl_themply'],
 'icon' => 'bundles/themply/icon.svg',
