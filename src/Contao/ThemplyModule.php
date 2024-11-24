@@ -12,7 +12,12 @@ class ThemplyModule extends Backend
         // Hier kannst du deine Logik hinzufügen
     }
 
-    public function run()
+    public function generate():string
+    {
+        // Logik für das Backend-Modul
+        return 'hello world';
+    }
+    public function run():string
     {
         // Logik für das Backend-Modul
         return 'hello world';
