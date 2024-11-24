@@ -1,5 +1,5 @@
 <?php
-namespace Contao;
+namespace Bits\Themply\Contao;
 
 use Contao\Backend;
 use Contao\System;

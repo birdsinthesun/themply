@@ -1,8 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
-namespace namespace Bits\Themply\DependencyInjection;
+namespace Bits\Themply\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
