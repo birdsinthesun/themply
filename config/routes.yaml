@@ -8,3 +8,7 @@ themply:
     path: /contao?do=themply
     controller: Bits\Themply\ThemplyModule::run
     type: annotation
+
+bits.contao_themply_bundle.controller:
+    resource: ../src/Controller
+    type: attribute
