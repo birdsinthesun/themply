@@ -26,28 +26,28 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-     Bits\Themply\Controller\Sort:
-            arguments:
-                - '@contao.routing.scope_matcher'
-                - '@Bits\Themply\Service\TableNameExtractor'
-                - '@Bits\Themply\Service\Sorter'
-            tags:
-                - 'controller.service_arguments'
+    Bits\Themply\Controller\Sort:
+        arguments:
+             - '@contao.routing.scope_matcher'
+             - '@Bits\Themply\Service\TableNameExtractor'
+             - '@Bits\Themply\Service\Sorter'
+        tags:
+             - 'controller.service_arguments'
 
-        Bits\Themply\EventListener\LoadDataContainerListener:
-            arguments:
-                - '@contao.routing.scope_matcher'
-                - '@request_stack'
-                - '@contao.framework'
-                - '@contao.csrf.token_manager'
-                - '@twig'
-                - '@router'
-                - '@Bits\Themply\Service\Sorter'
-            tags:
-                - { name: contao.hook, hook: loadDataContainer }
+    Bits\Themply\EventListener\LoadDataContainerListener:
+        arguments:
+            - '@contao.routing.scope_matcher'
+            - '@request_stack'
+            - '@contao.framework'
+            - '@contao.csrf.token_manager'
+            - '@twig'
+            - '@router'
+            - '@Bits\Themply\Service\Sorter'
+        tags:
+            - { name: contao.hook, hook: loadDataContainer }
 
-        Bits\Themply\Service\TableNameExtractor:
+    Bits\Themply\Service\TableNameExtractor:
 
-        Bits\Themply\Service\Sorter:
-            arguments:
-                - '@database_connection'
+    Bits\Themply\Service\Sorter:
+        arguments:
+            - '@database_connection'
