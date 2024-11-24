@@ -1,6 +1,6 @@
 <?php
 // src/Controller/LuckyController.php
-namespace App\Controller;
+namespace Bits\Themply;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
