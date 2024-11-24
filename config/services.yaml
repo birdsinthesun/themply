@@ -49,9 +49,9 @@ services:
     Bits\Themply\Service\Sorter:
         arguments:
             - '@database_connection'
-    Bits\ThemplyBundle\:
+    Bits\Themply\:
         resource: ../src
         exclude: 
             - ../src/{ContaoManager,DependencyInjection}
-            - '../src/Contao/ThemplyModule.php'
-            - '../src/Eventlistener/'
+         #   - '../src/Contao/ThemplyModule.php'
+         #   - '../src/Eventlistener/'
