@@ -20,11 +20,7 @@ services:
     #    - '../src/Entity/'
     #    - '../src/Kernel.php'
     
-    Bits\ThemplyBundle\:
-        resource: ../src
-        exclude: 
-            - ../src/{ContaoManager,DependencyInjection}
-            - '../src/Contao/ThemplyModule.php'
+    
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
@@ -53,3 +49,8 @@ services:
     Bits\Themply\Service\Sorter:
         arguments:
             - '@database_connection'
+    Bits\ThemplyBundle\:
+        resource: ../src
+        exclude: 
+            - ../src/{ContaoManager,DependencyInjection}
+            - '../src/Contao/ThemplyModule.php'
