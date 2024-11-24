@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Oneup\ContaoBackendSortableListViewsBundle\Service;
+namespace namespace Bits\Themply\Service;
 
 class TableNameExtractor
 {

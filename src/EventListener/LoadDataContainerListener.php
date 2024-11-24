@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Oneup\ContaoBackendSortableListViewsBundle\EventListener;
+namespace namespace Bits\Themply\EventListener;
 
 use Contao\Controller;
 use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;

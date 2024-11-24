@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Oneup\ContaoBackendSortableListViewsBundle;
+namespace namespace Bits\Themply;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Oneup\ContaoBackendSortableListViewsBundle\Controller;
+namespace namespace Bits\Themply\Controller;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Oneup\ContaoBackendSortableListViewsBundle\Service\Sorter;
