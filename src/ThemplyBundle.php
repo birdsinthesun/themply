@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace namespace Bits\Themply;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class OneupContaoBackendSortableListViewsBundle extends Bundle
+class ThemplyBundle extends Bundle
 {
     public function getPath(): string
     {

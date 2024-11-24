@@ -21,6 +21,12 @@
         }
     ],
     "homepage": "https://github.com/birdsinthesun/themply",
+    "repositories": {
+        "birdsinthesun/themply": {
+            "type": "path",
+            "url": "/vendor/birdsinthesun/themply"
+        }
+    },
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
@@ -96,6 +102,8 @@
         "symfony/symfony": "*"
     },
     "extra": {
+         
+        "contao-manager-plugin": "Bits\\Themply\\ContaoManager\\Plugin",
         "symfony": {
             "allow-contrib": false,
             "require": "6.4.*"
