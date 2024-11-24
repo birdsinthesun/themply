@@ -15,5 +15,6 @@ class ThemplyModule extends Backend
     public function run()
     {
         // Logik für das Backend-Modul
+        return 'hello world';
     }
 }
