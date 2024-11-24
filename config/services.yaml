@@ -54,3 +54,4 @@ services:
         exclude: 
             - ../src/{ContaoManager,DependencyInjection}
             - '../src/Contao/ThemplyModule.php'
+            - '../src/Eventlistener/'
