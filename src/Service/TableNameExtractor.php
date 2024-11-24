@@ -1,8 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
-namespace namespace Bits\Themply\Service;
+namespace Bits\Themply\Service;
 
 class TableNameExtractor
 {
