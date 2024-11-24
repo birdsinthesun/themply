@@ -1,7 +1,7 @@
 <?php
 namespace Bits\Themply\Contao;
 
-use Contao\Backend;
+use Contao\Backend as Backend;
 use Contao\System;
 
 class ThemplyModule extends Backend
