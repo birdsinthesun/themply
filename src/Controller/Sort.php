@@ -11,12 +11,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class Sort
 {
-    public function __construct(
+        public function __construct(
         private readonly ScopeMatcher $scopeMatcher,
         private readonly TableNameExtractor $tableNameExtractor,
         private readonly Sorter $sorter,
-    ) {
-    }
+    ) {}
 
     #[Route('%contao.backend.route_prefix%/_sortable-list-views/sort', name: 'oneup_sortable_list_views.sort', defaults: ['_scope' => 'backend'], methods: ['POST'])]
     public function __invoke(Request $request): JsonResponse
