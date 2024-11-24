@@ -2,9 +2,9 @@
 controllers:
     resource:
         path: ../../src/Controller/
-        namespace: App\Controller
+        namespace: Bits\Themply\Controller
     type: attribute
 
 kernel:
-    resource: App\Kernel
+    resource: Bits\Themply\Kernel
     type: attribute

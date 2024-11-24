@@ -1,13 +1,13 @@
 services:
-    Oneup\ContaoBackendSortableListViewsBundle\Controller\Sort:
+    Bits\Themply\Controller\Sort:
         arguments:
             - '@contao.routing.scope_matcher'
-            - '@Oneup\ContaoBackendSortableListViewsBundle\Service\TableNameExtractor'
-            - '@Oneup\ContaoBackendSortableListViewsBundle\Service\Sorter'
+            - '@Bits\Themply\Service\TableNameExtractor'
+            - '@Bits\Themply\Service\Sorter'
         tags:
             - 'controller.service_arguments'
 
-    Oneup\ContaoBackendSortableListViewsBundle\EventListener\LoadDataContainerListener:
+    Bits\Themply\EventListener\LoadDataContainerListener:
         arguments:
             - '@contao.routing.scope_matcher'
             - '@request_stack'
@@ -19,8 +19,8 @@ services:
         tags:
             - { name: contao.hook, hook: loadDataContainer }
 
-    Oneup\ContaoBackendSortableListViewsBundle\Service\TableNameExtractor:
+    Bits\Themply\Service\TableNameExtractor:
 
-    Oneup\ContaoBackendSortableListViewsBundle\Service\Sorter:
+    Bits\Themply\Service\Sorter:
         arguments:
             - '@database_connection'

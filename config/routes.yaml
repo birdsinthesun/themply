@@ -1,4 +1,10 @@
 page_lucky:
     path: /lucky
     # the controller value has the format 'controller_class::method_name'
-    controller: App\Controller\LuckyController::number
+    controller: Bits\Themply\Controller\LuckyController::number
+    type: annotation
+    
+themply:
+    path: /contao?do=themply
+    controller: Bits\Themply\ThemplyModule::run
+    type: annotation

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace namespace Bits\Themply\Controller;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
-use Oneup\ContaoBackendSortableListViewsBundle\Service\Sorter;
-use Oneup\ContaoBackendSortableListViewsBundle\Service\TableNameExtractor;
+use Bits\Themply\Service\Sorter;
+use Bits\Themply\Service\TableNameExtractor;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;

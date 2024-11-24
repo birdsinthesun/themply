@@ -1,7 +1,7 @@
 {
     "name": "birdsinthesun/themply",
     "description": "Noch nicht fertig. Bitte vorerst nicht installieren",
-     "keywords": [
+    "keywords": [
         "contao",
         "bootstrap",
         "theme",
@@ -12,7 +12,7 @@
     "version":"1.1.0",
     "minimum-stability": "stable",
     "prefer-stable": true,
-     "authors": [
+    "authors": [
         {
             "name": "Monique Hahnefeld",
             "email": "hello@bits-design.de",

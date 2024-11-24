@@ -1,9 +1,0 @@
-{
-  "entrypoints": {
-    "backend": {
-      "js": [
-        "/bundles/contaocore/backend.3db086cc.js"
-      ]
-    }
-  }
-}
