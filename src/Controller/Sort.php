@@ -1,5 +1,5 @@
 <?php
-namespace namespace Bits\Themply\Controller;
+namespace Bits\Themply\Controller;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Bits\Themply\Service\Sorter;
