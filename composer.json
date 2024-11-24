@@ -102,11 +102,10 @@
         "symfony/symfony": "*"
     },
     "extra": {
-         
-        "contao-manager-plugin": "Bits\\Themply\\ContaoManager\\Plugin",
         "symfony": {
             "allow-contrib": false,
             "require": "6.4.*"
-        }
+        },
+        "contao-manager-plugin": "Bits\\Themply\\ContaoManager\\Plugin"
     }
 }
