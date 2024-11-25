@@ -41,6 +41,7 @@
         "symfony/runtime": "6.4.*",
         "symfony/twig-bundle": "6.4.*",
         "symfony/yaml": "6.4.*",
+        "symfony/filesystem": "*",
         "symfonycasts/sass-bundle": "^0.8.2",
         "thomaspark/bootswatch": "^5.3",
         "twbs/bootstrap": "^5.3",

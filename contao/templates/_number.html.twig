@@ -4,9 +4,19 @@
 {% endblock %}
 {% block main_content %}
 <style>#main_headline{display:none}</style>
-   <h1 style="font-size:180px;">birdsinthesun</h1>
+   <h1 style="font-size:180px;">birdsinthesun </h1>
     <div >
-      <img src="/vendor/birdsinthesun/themply/icon.png" alt="Logo"><br>
+      <img src="{{ asset('images/logo.png', 'themply') }}" alt="Logo">
+      <br>
       <h2 style="font-size:120px;">Hello Themply: {{ number }}</h2> 
+      <br>
+      {{ form_start(form, {'method': 'GET'}) }}
+      {{ form_rest(form) }}
+      {{ form_end(form) }}
     </div>
+
+ <iframe src="https://bootswatch.com/quartz/" title="Quartz"
+  style="border: 3px dotted black; width: 960px; height: 600px;">
+</iframe> 
+
 {% endblock %}
