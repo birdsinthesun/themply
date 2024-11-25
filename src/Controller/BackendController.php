@@ -10,9 +10,9 @@ use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 
-#[Route(' %contao.backend.route_prefix%/themply', name: self::class, defaults: ['_scope' => 'backend','_token_check' => true], methods: ['POST'])]  
+#[Route(' %contao.backend.route_prefix%/themply', name: self::class, defaults: ['_scope' => 'backend'])]  
 #[AsController]
-class LuckyController extends AbstractBackendController
+class BackendController extends AbstractBackendController
 {
     
     public function __construct(
@@ -23,15 +23,13 @@ class LuckyController extends AbstractBackendController
 
        public function __invoke(Request $request): Response
     {
-       
-       var_dump(self::class);exit;
-           
-           if (!$this->scopeMatcher->isBackendRequest($request)) {
+            
+        if (!$this->scopeMatcher->isBackendRequest($request)) {
             throw new AccessDeniedHttpException('You are not in a Contao backend scope.');
         }
           $number = random_int(0, 100);
 
-        return $this->render('@Contao_ThemplyBundle/Backend/_number.html.twig', [
+        return $this->render('@Contao_ThemplyBundle/_number.html.twig', [
             'number' => $number
         ]);
     }

@@ -17,7 +17,6 @@ https://symfony.com/bundles/SassBundle/current/index.html
 https://packagist.org/packages/thomaspark/bootswatch
 https://bootswatch.com/lux/
 
-
 ### wichtige Shell Befehle ###
 
     cd/

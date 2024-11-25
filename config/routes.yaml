@@ -1,14 +1,10 @@
-bits.themply.controller:
-    resource: ../src/Controller
-    type: attribute
-    
-    Bits\Themply\Controller\LuckyController:
+    Bits\Themply\Controller\BackendController:
         path: /contao/themply
-        controller: Bits\Themply\Controller\LuckyController::__invoke
+        controller: Bits\Themply\Controller\BackendController::__invoke
         type: annotation
     
-     bits.themply.controller.luckycontroller:
+    bits.themply.controller.backendcontroller:
         path: /contao/themply
-        controller: Bits\Themply\Controller\LuckyController::__invoke
+        controller: Bits\Themply\Controller\BackendController::__invoke
         type: annotation
 
