@@ -14,6 +14,12 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    Bits\Themply\Controller\LuckyController: 
+        arguments:
+             - '@contao.routing.scope_matcher'
+        tags:
+             - 'controller.service_arguments'
+            
     Bits\Themply\Controller\Sort:
         arguments:
              - '@contao.routing.scope_matcher'

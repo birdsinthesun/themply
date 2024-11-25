@@ -6,5 +6,5 @@ controllers:
     type: attribute
 
 kernel:
-    resource: Bits\Themply\Kernel
+    resource: Bits\Themply\Controller\
     type: attribute

@@ -7,15 +7,11 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator) {
 $services = $containerConfigurator->services();
 };
-// Registriere das Backend-Modul
-$GLOBALS['BE_MOD']['design'] = [
-'themply' => [
-'tables' => ['tl_themply'],
-'icon' => 'birdsinthesun/themply/icon.png',
-'callback' => \Bits\Themply\Contao\ThemplyModule::class
-],
-];
 
-
+$container->loadFromExtension('twig', [
+    'paths' => [
+        '%kernel.project_dir%/vendor/birdsinthesun/themply/contao/templates' => '@Contao_ThemplyBundle'
+    ]
+]);
 
 ?>
