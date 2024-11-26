@@ -6,32 +6,40 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Path;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class Generator
 {
   
   
     // builds the assetfiles
-      public function buildChoiceField($form)
+      public function buildChoiceField($form,$token)
     {
         
-        $choicesArr = [];
+        $themesArr = [];
         chdir('../');
     
         $bootswatchThemesArr = scandir(getcwd().'/vendor/thomaspark/bootswatch/dist');
-         // var_dump($bootswatchThemesArr);exit;
+        
           chdir('public');
         foreach($bootswatchThemesArr as $bootswatchTheme){
       
           if($bootswatchTheme != "." && $bootswatchTheme != ".."){
-            $choicesArr[$bootswatchTheme] = lcfirst($bootswatchTheme);
+            $themesArr[$bootswatchTheme] = ucwords($bootswatchTheme);
           }
           
         }
-        $choicesArr = array_flip($choicesArr);
-        return $form->add('Themes_Auswahl', ChoiceType::class,['choices'  =>$choicesArr ])->getForm();
-        
-        
+        $themesArr = array_flip($themesArr);
+       
+         return $form
+           ->add('REQUEST_TOKEN', HiddenType::class, ['attr' => ['data' => $token]])
+           ->add('themes', ChoiceType::class, ['choices'  =>$themesArr ])
+           ->add('verzeichnis', TextType::class)
+           ->add('generieren', SubmitType::class, ['label' => 'Theme Generieren'])
+           ->getForm();
          
        
     }
