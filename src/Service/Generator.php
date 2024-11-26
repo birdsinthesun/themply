@@ -35,7 +35,7 @@ class Generator
         $themesArr = array_flip($themesArr);
        
          return $form
-           ->add('themes', ChoiceType::class, ['choices'  =>$themesArr ])
+           ->add('themes', ChoiceType::class, ['choices'  =>$themesArr])
            ->add('verzeichnis', TextType::class)
            ->add('generieren', SubmitType::class, ['label' => 'Theme Generieren'])
            ->getForm();

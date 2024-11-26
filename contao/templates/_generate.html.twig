@@ -12,8 +12,8 @@
       <br>
       {{ form_start(form,  { 'attr': {'class': 'test' , 'data-turbo': 'false'}}, {'action': 'themply'}, {'method': 'POST'}) }}
      
-       {{ form_row(form.themes) }}
-      {{ form_row(form.verzeichnis) }}
+        {{ form_row(form.themes,{'value':'quarz'}) }}
+        {{ form_row(form.verzeichnis) }}
       {{ form_end(form) }}
     </div>
 
