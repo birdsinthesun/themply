@@ -41,12 +41,13 @@ class BackendController extends AbstractBackendController
             throw new AccessDeniedHttpException('You are not in a Contao backend scope.');
         }
         $AccessToken = new TokenService($csrfTokenManager,'REQUEST_TOKEN');
-        $_GET['rt'] =$AccessToken->generateToken();
-           var_dump( System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request));
-        if(empty($_POST)){
+        //$_GET['rt'] =$AccessToken->generateToken();
+         var_dump($_POST);
+          // var_dump( System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request));
+        if(System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request) === true){
             $Generator = new Generator();
-            $form = parent::createFormBuilder();
-            $Form = $Generator->buildChoiceField($form,$AccessToken->generateToken());
+            $form = $this->createFormBuilder(options: $this->getCsrfFormOptions());
+            $Form = $Generator->buildFields($form,$AccessToken->generateToken());
             
             $number = random_int(0, 100);
             
@@ -57,8 +58,8 @@ class BackendController extends AbstractBackendController
                
            }else{
          
-          var_dump($_POST);exit;
-          //return $this->render('@Contao_ThemplyBundle/_finished.html.twig', []);
+         // var_dump($_POST);exit;
+          return $this->render('@Contao_ThemplyBundle/_finished.html.twig', []);
         }
       
            
