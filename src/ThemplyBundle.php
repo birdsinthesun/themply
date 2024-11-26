@@ -18,4 +18,3 @@ class ThemplyBundle extends AbstractBundle
         $containerConfigurator->import('../config/services.yaml');
     }
 }
-
