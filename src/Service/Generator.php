@@ -35,7 +35,7 @@ class Generator
         $themesArr = array_flip($themesArr);
        
          return $form
-           ->add('REQUEST_TOKEN', HiddenType::class, ['attr' => ['data' => $token]])
+        //   ->add('REQUEST_TOKEN', HiddenType::class, ['attr' => ['data' => $token]])
            ->add('themes', ChoiceType::class, ['choices'  =>$themesArr ])
            ->add('verzeichnis', TextType::class)
            ->add('generieren', SubmitType::class, ['label' => 'Theme Generieren'])

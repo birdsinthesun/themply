@@ -41,16 +41,16 @@ class BackendController extends AbstractBackendController
             throw new AccessDeniedHttpException('You are not in a Contao backend scope.');
         }
         $AccessToken = new TokenService($csrfTokenManager,'REQUEST_TOKEN');
-       // $_GET['rt'] =$AccessToken->generateToken();
-         //  var_dump( $AccessToken->generateToken(),$requestStack);
-           // hier kommt eigentlich die Prüfung ob $_POST leer ist. habe das jetzt nur so zum debuggn
-        if(System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request)===false){
+        //$_GET['rt'] =$AccessToken->generateToken();
+         var_dump($_POST);
+          // var_dump( System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request));
+        if(System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request) === true){
             $Generator = new Generator();
-            $form = parent::createFormBuilder(options: $this->getCsrfFormOptions());
+            $form = $this->createFormBuilder(options: $this->getCsrfFormOptions());
             $Form = $Generator->buildFields($form,$AccessToken->generateToken());
             
             $number = random_int(0, 100);
-            // var_dump($_POST);exit;
+            
             return $this->render('@Contao_ThemplyBundle/_number.html.twig', [
                 'number' => $number,
                 'form' => $Form
@@ -58,7 +58,7 @@ class BackendController extends AbstractBackendController
                
            }else{
          
-          //var_dump($_POST,$AccessToken->generateToken());exit;
+         // var_dump($_POST);exit;
           return $this->render('@Contao_ThemplyBundle/_finished.html.twig', []);
         }
       

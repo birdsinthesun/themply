@@ -2,7 +2,7 @@
 // src/EventListener/BackendMenuListener.php
 namespace Bits\Themply\EventListener;
 
-use Bits\Themply\Controller\LuckyController as BackendController;
+use Bits\Themply\Controller\BackendController;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
