@@ -10,8 +10,8 @@
       <br>
       <h2 style="font-size:120px;">Hello Themply: {{ number }}</h2> 
       <br>
-      {{ form_start(form, {'action': 'themply'}, {'method': 'POST'}) }}
-      {{ form_row(form.REQUEST_TOKEN) }}
+      {{ form_start(form,  { 'attr': {'class': 'test' , 'data-turbo': 'false'}}, {'action': 'themply'}, {'method': 'POST'}) }}
+     
        {{ form_row(form.themes) }}
       {{ form_row(form.verzeichnis) }}
       {{ form_end(form) }}
