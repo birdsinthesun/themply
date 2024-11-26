@@ -16,7 +16,7 @@ class Generator
   
   
     // builds the assetfiles
-      public function buildChoiceField($form,$token)
+      public function buildFields($form,$token)
     {
         
         $themesArr = [];
