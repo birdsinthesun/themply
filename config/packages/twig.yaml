@@ -7,3 +7,4 @@ when@test:
 
 paths:
   '%kernel.project_dir%/assets/images': images
+  

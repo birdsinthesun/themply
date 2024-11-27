@@ -18,7 +18,29 @@ class Plugin implements BundlePluginInterface,RoutingPluginInterface
         return [
             BundleConfig::create(ThemplyBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class,
-                               SymfonycastsSassBundle::class])
+                                SymfonycastsSassBundle::class,
+                                SymfonyAssetBundle::class,
+                                SymfonyAsset_MapperBundle::class,
+                                SymfonyDotenvBundle::class,
+                                SymfonyFrameworkBundle::class,
+                                SymfonyConfigBundle::class,
+                                SymfonyConsoleBundle::class,
+                                SymfonyRuntimeBundle::class,
+                                SymfonyTwigBundle::class,
+                                SymfonyYamlBundle::class,
+                                SymfonyFilesystemBundle::class,
+                                SymfonyFormBundle::class,
+                                SymfonycastsSassBundle::class,
+                                ThomasparkBootswatchBundle::class,
+                                TwbsBootstrapBundle::class,
+                                TwigExtraBundle::class,
+                                TwigTwig::class
+                               
+                               
+                               
+                               
+                               
+                               ])
                
         ];
     }
