@@ -57,22 +57,24 @@ class Generator
           }
         $appScssContent = '/* '.$themeAlias.' Theme https://bootswatch.com/'.$themeAlias.'/ */
 
-@import "../../../../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/variables";
-@import "../../../../../vendor/twbs/bootstrap/scss/bootstrap";
-@import "../../../../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/bootswatch";';
+@import "../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/variables";
+@import "../../vendor/twbs/bootstrap/scss/bootstrap";
+@import "../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/bootswatch";';
         
-         chdir('vendor/birdsinthesun/themply');
+         //chdir('vendor/birdsinthesun/themply');
         $filesystem->dumpFile('assets/styles/app.scss', $appScssContent);
         
         // Stylesheet generieren
         
         $stylesheetName = 'themply_'.$themeAlias.'.css';
-        chdir('../../../');
-       $console = shell_exec('php bin/console sass:build 2>&1');
-        chdir('public');
-      echo "<pre>$console</pre>";exit;
+        //chdir('../../../');
+       $console = shell_exec('php bin/console sass:build');
+     
+        $filesystem->copy($currentDir.'/var/sass/app.output.css', $currentDir.'/files/'.$zielVerzeichnis.'/'.$stylesheetName,true);
+       chdir('public');
+     // echo "<pre>$console</pre>";exit;
        
-         return $zielVerzeichnis.'/'.$stylesheetName;
+         return $stylesheetName;
          
        
     }

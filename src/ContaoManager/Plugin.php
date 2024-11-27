@@ -17,8 +17,11 @@ class Plugin implements BundlePluginInterface,RoutingPluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(SymfonycastsSassBundle::class)
-            ->setLoadAfter([ContaoCoreBundle::class]),
+          //  BundleConfig::create(SymfonyAssetBundle::class),
+           // BundleConfig::create(SymfonyAsset_MapperBundle::class),
+            BundleConfig::create(SymfonycastsSassBundle::class),
+           // BundleConfig::create(ThomasparkBootswatchBundle::class),
+           // BundleConfig::create(TwbsBootstrapBundle::class),
             BundleConfig::create(ThemplyBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
                

@@ -54,7 +54,8 @@ class BackendController extends AbstractBackendController
                  return $this->render('@Contao_ThemplyBundle/_finished.html.twig', [
                       'themeName' => ucwords($_POST['form']['themes']),
                       'themeAlias' => $_POST['form']['themes'],
-                      'verzeichnis' =>  $_POST['form']['verzeichnis']
+                      'verzeichnis' =>  $_POST['form']['verzeichnis'],
+                      'stylesheet' => $stylesheetName
                 ]);
                 
             }else{
@@ -62,6 +63,7 @@ class BackendController extends AbstractBackendController
                       'themeName' => ucwords($_POST['form']['themes']),
                       'themeAlias' => $_POST['form']['themes'],
                       'verzeichnis' =>  $_POST['form']['verzeichnis']
+                     
                 ]);
             }
                 
