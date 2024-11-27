@@ -48,13 +48,25 @@ class BackendController extends AbstractBackendController
             ]);
                
            }else{
-         
+            $Generator = new Generator();
+            $stylesheetName = $Generator->buildStylesheet( $_POST['form']['themes'], $_POST['form']['verzeichnis']);
         //  var_dump($_POST['form']['themes']);exit;
-          return $this->render('@Contao_ThemplyBundle/_finished.html.twig', [
-              'themeName' => ucwords($_POST['form']['themes']),
-              'themeAlias' => $_POST['form']['themes'],
-              'verzeichnis' =>  $_POST['form']['verzeichnis']
-          ]);
+            if(is_string($stylesheetName)){
+                 return $this->render('@Contao_ThemplyBundle/_finished.html.twig', [
+                      'themeName' => ucwords($_POST['form']['themes']),
+                      'themeAlias' => $_POST['form']['themes'],
+                      'verzeichnis' =>  $_POST['form']['verzeichnis']
+                ]);
+                
+            }else{
+                return $this->render('@Contao_ThemplyBundle/_error.html.twig', [
+                      'themeName' => ucwords($_POST['form']['themes']),
+                      'themeAlias' => $_POST['form']['themes'],
+                      'verzeichnis' =>  $_POST['form']['verzeichnis']
+                ]);
+            }
+                
+          
         }
       
            

@@ -15,7 +15,7 @@ class Generator
 {
   
   
-    // builds the assetfiles
+    // builds the form
       public function buildFields($form)
     {
         
@@ -24,7 +24,7 @@ class Generator
     
         $bootswatchThemesArr = scandir(getcwd().'/vendor/thomaspark/bootswatch/dist');
         
-          chdir('public');
+        chdir('public');
         foreach($bootswatchThemesArr as $bootswatchTheme){
       
           if($bootswatchTheme != "." && $bootswatchTheme != ".."){
@@ -39,6 +39,44 @@ class Generator
            ->add('verzeichnis', TextType::class)
            ->add('generieren', SubmitType::class, ['label' => 'Theme Generieren'])
            ->getForm();
+         
+       
+    }
+  
+      // builds the stylesheet
+      public function buildStylesheet($themeAlias, $zielVerzeichnis)
+    {
+        
+        $currentDir = getcwd();
+        
+       // var_dump($currentDir);exit;
+        // scss file generieren
+        
+        $filesystem = new Filesystem();
+          if($filesystem->exists($currentDir.'/files/'.$zielVerzeichnis) === false){
+              return false;
+          }
+        $appScssContent = '/* '.$themeAlias.' Theme https://bootswatch.com/'.$themeAlias.'/ */
+
+@import "../../../../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/variables";
+@import "../../../../../vendor/twbs/bootstrap/scss/bootstrap";
+@import "../../../../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/bootswatch";';
+        
+         chdir('../vendor/birdsinthesun/themply');
+        $filesystem->dumpFile('assets/styles/app.scss', $appScssContent);
+        
+        // Stylesheet generieren
+        
+        $stylesheetName = 'themply_'.$themeAlias.'.css';
+        chdir('../../../vendor');
+        $console = shell_exec('php birdsinthesun/themply/bin/console sass:build');
+        echo "<pre>$console</pre>";exit;
+    
+       // $bootswatchThemesArr = scandir(getcwd().'/vendor/thomaspark/bootswatch/dist');
+        
+        //  chdir('/public');
+       
+         return $zielVerzeichnis.'/'.$stylesheetName;
          
        
     }
