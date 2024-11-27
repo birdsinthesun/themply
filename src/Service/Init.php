@@ -13,7 +13,8 @@ class Init
       public function buildAssetFiles()
     {
         $filesystem = new Filesystem();
-          if($filesystem->exists('/public/bundles/themply/styles')=== true){
+          if($filesystem->exists('/public/bundles/themply/styles')=== true &&
+            $filesystem->exists('/bin/console-themply')=== true){
               return true;
           }
         chdir('../');
@@ -27,7 +28,8 @@ class Init
           }else{
                 $filesystem->mkdir($currentDir.'/public/bundles/themply');
           }
-        
+        // copy console
+         $filesystem->copy($currentDir.'/vendor/birdsinthesun/themply/bin/console', $currentDir.'/bin/console-themply',true);
         chdir('public');
     }
 }

@@ -47,11 +47,13 @@ class Generator
       public function buildStylesheet($themeAlias, $zielVerzeichnis)
     {
         
-        $currentDir = getcwd();
+       
         
-       // var_dump($currentDir);exit;
+      
         // scss file generieren
-        
+        chdir('../');
+         $currentDir = getcwd();
+     
         $filesystem = new Filesystem();
           if($filesystem->exists($currentDir.'/files/'.$zielVerzeichnis) === false){
               return false;
@@ -62,19 +64,16 @@ class Generator
 @import "../../../../../vendor/twbs/bootstrap/scss/bootstrap";
 @import "../../../../../vendor/thomaspark/bootswatch/dist/'.$themeAlias.'/bootswatch";';
         
-         chdir('../vendor/birdsinthesun/themply');
+         chdir('vendor/birdsinthesun/themply');
         $filesystem->dumpFile('assets/styles/app.scss', $appScssContent);
         
         // Stylesheet generieren
         
         $stylesheetName = 'themply_'.$themeAlias.'.css';
         chdir('../../../vendor');
-        $console = shell_exec('php birdsinthesun/themply/bin/console sass:build');
-        echo "<pre>$console</pre>";exit;
-    
-       // $bootswatchThemesArr = scandir(getcwd().'/vendor/thomaspark/bootswatch/dist');
-        
-        //  chdir('/public');
+      //  $console = shell_exec('php bin/console-themply sass:build');
+        chdir('../public');
+      //  echo "<pre>$console</pre>";exit;
        
          return $zielVerzeichnis.'/'.$stylesheetName;
          

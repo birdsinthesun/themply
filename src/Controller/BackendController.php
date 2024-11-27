@@ -14,7 +14,6 @@ use Bits\Themply\Service\Generator;
 use Contao\System;
 
 #[Route(' %contao.backend.route_prefix%/themply', name: self::class, defaults: ['_scope' => 'backend'])]  
-#[AsController]
 class BackendController extends AbstractBackendController
 {
     
