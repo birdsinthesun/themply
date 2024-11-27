@@ -47,9 +47,6 @@ class Generator
       public function buildStylesheet($themeAlias, $zielVerzeichnis)
     {
         
-       
-        
-      
         // scss file generieren
         chdir('../');
          $currentDir = getcwd();
@@ -70,10 +67,10 @@ class Generator
         // Stylesheet generieren
         
         $stylesheetName = 'themply_'.$themeAlias.'.css';
-        chdir('../../../vendor');
-      //  $console = shell_exec('php bin/console-themply sass:build');
-        chdir('../public');
-      //  echo "<pre>$console</pre>";exit;
+        chdir('../../../');
+        $console = shell_exec('php bin/console sass:build');
+        chdir('public');
+       echo "<pre>$console</pre>";exit;
        
          return $zielVerzeichnis.'/'.$stylesheetName;
          
