@@ -68,9 +68,9 @@ class Generator
         
         $stylesheetName = 'themply_'.$themeAlias.'.css';
         chdir('../../../');
-        $console = shell_exec('php bin/console sass:build 2>&1');
+       $console = shell_exec('php bin/console sass:build 2>&1');
         chdir('public');
-       echo "<pre>$console</pre>";exit;
+      echo "<pre>$console</pre>";exit;
        
          return $zielVerzeichnis.'/'.$stylesheetName;
          

@@ -16,9 +16,8 @@ class Plugin implements BundlePluginInterface,RoutingPluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(ThemplyBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class,
-                                SymfonycastsSassBundle::class,
+            BundleConfig::create(ThemplyBundle::class,
+                                 SymfonycastsSassBundle::class,
                                 SymfonyAssetBundle::class,
                                 SymfonyAsset_MapperBundle::class,
                                 SymfonyDotenvBundle::class,
@@ -36,11 +35,10 @@ class Plugin implements BundlePluginInterface,RoutingPluginInterface
                                 TwigExtraBundle::class,
                                 TwigTwig::class
                                
-                               
-                               
-                               
-                               
-                               ])
+                                
+                                
+                                )
+                ->setLoadAfter([ContaoCoreBundle::class])
                
         ];
     }
