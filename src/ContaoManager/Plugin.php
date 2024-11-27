@@ -10,34 +10,16 @@ use Bits\Themply\ThemplyBundle;
 use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfonycasts\SassBundle\SymfonycastsSassBundle;
 
 class Plugin implements BundlePluginInterface,RoutingPluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(ThemplyBundle::class,
-                                 SymfonycastsSassBundle::class,
-                                SymfonyAssetBundle::class,
-                                SymfonyAsset_MapperBundle::class,
-                                SymfonyDotenvBundle::class,
-                                SymfonyFrameworkBundle::class,
-                                SymfonyConfigBundle::class,
-                                SymfonyConsoleBundle::class,
-                                SymfonyRuntimeBundle::class,
-                                SymfonyTwigBundle::class,
-                                SymfonyYamlBundle::class,
-                                SymfonyFilesystemBundle::class,
-                                SymfonyFormBundle::class,
-                                SymfonycastsSassBundle::class,
-                                ThomasparkBootswatchBundle::class,
-                                TwbsBootstrapBundle::class,
-                                TwigExtraBundle::class,
-                                TwigTwig::class
-                               
-                                
-                                
-                                )
+            BundleConfig::create(SymfonycastsSassBundle::class)
+            ->setLoadAfter([ContaoCoreBundle::class]),
+            BundleConfig::create(ThemplyBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
                
         ];
