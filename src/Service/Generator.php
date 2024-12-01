@@ -65,17 +65,43 @@ class Generator
         $filesystem->dumpFile('assets/styles/app.scss', $appScssContent);
         
         // Stylesheet generieren
-        
+        $serverPhpPath = $this->detectPhpPath();
+       //   echo $serverPhpPath;exit;
+          // exit;
         $stylesheetName = 'themply_'.$themeAlias.'.css';
         //chdir('../../../');
-       $console = shell_exec('php bin/console sass:build');
-     
+      // $console = shell_exec($serverPhpPath.'php82/bin/php bin/console sass:build');
+   //   echo "<pre>$console</pre>";exit;
         $filesystem->copy($currentDir.'/var/sass/app.output.css', $currentDir.'/files/'.$zielVerzeichnis.'/'.$stylesheetName,true);
        chdir('public');
-     // echo "<pre>$console</pre>";exit;
+    
        
          return $stylesheetName;
          
        
     }
+    
+     // builds the stylesheet
+      private function detectPhpPath()
+    {
+         //PATH => /usr/local/bin:/usr/bin:/bin _ => /usr/bin/php 
+         
+          $pathArr = explode(':',$_SERVER['PATH']);
+         //  var_dump($pathArr);
+          foreach($pathArr as $path){
+              $result = shell_exec($path.'/php83/bin/php bin/console sass:build');
+              $result2 = shell_exec($path.'/php83 bin/console sass:build');
+              //echo is_string($result).'  2. '.is_string($result2);
+              if(is_string($result) || is_string($result2)){
+                // echo $result.'  2. '.$result2;
+                   return $path;
+              }
+          }
+       //  echo shell_exec('php -i 2>&1'); exit;
+        //  if($_SERVER["SERVER_SOFTWARE"]=='Apache'){
+          //    return '/usr/local/';
+              
+         // }
+          
+      }
 }
