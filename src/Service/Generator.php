@@ -66,17 +66,25 @@ class Generator
         
         // Stylesheet generieren
         $serverPhpPath = $this->detectPhpPath();
-       //   echo $serverPhpPath;exit;
-          // exit;
+        $feedbackArr = [];
         $stylesheetName = 'themply_'.$themeAlias.'.css';
-        //chdir('../../../');
+       
+       
+        if($filesystem->exists($currentDir.'/var/sass/app.output.css') === false){
+            $feedbackArr['error'] = true ;
+          }else{
+            //chdir('../../../');
       // $console = shell_exec($serverPhpPath.'php82/bin/php bin/console sass:build');
    //   echo "<pre>$console</pre>";exit;
-        $filesystem->copy($currentDir.'/var/sass/app.output.css', $currentDir.'/files/'.$zielVerzeichnis.'/'.$stylesheetName,true);
-       chdir('public');
-    
+           $feedbackArr['stylesheetName'] = $stylesheetName ;
+            $filesystem->copy($currentDir.'/var/sass/app.output.css', $currentDir.'/files/'.$zielVerzeichnis.'/'.$stylesheetName,true);
        
-         return $stylesheetName;
+          
+        }
+       
+        chdir('public');
+       
+         return $feedbackArr;
          
        
     }
@@ -84,8 +92,6 @@ class Generator
      // builds the stylesheet
       private function detectPhpPath()
     {
-         //PATH => /usr/local/bin:/usr/bin:/bin _ => /usr/bin/php 
-         
           $pathArr = explode(':',$_SERVER['PATH']);
          //  var_dump($pathArr);
           foreach($pathArr as $path){
@@ -97,11 +103,7 @@ class Generator
                    return $path;
               }
           }
-       //  echo shell_exec('php -i 2>&1'); exit;
-        //  if($_SERVER["SERVER_SOFTWARE"]=='Apache'){
-          //    return '/usr/local/';
-              
-         // }
+      
           
       }
 }
