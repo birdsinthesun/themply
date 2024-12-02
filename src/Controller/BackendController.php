@@ -48,18 +48,27 @@ class BackendController extends AbstractBackendController
                
            }else{
             $Generator = new Generator();
-            $stylesheetName = $Generator->buildStylesheet( $_POST['form']['themes'], $_POST['form']['verzeichnis']);
+            $generatorFeedback = $Generator->buildStylesheet( $_POST['form']['themes'], $_POST['form']['verzeichnis']);
         //  var_dump($_POST['form']['themes']);exit;
-            if(is_string($stylesheetName)){
+            if($generatorFeedback['error'] === true){
+                return $this->render('@Contao_ThemplyBundle/_error_2.html.twig', [
+                      'themeName' => ucwords($_POST['form']['themes']),
+                      'themeAlias' => $_POST['form']['themes'],
+                      'verzeichnis' =>  $_POST['form']['verzeichnis']
+                     
+                ]);
+                
+            }
+            if(is_string($generatorFeedback['stylesheetName'])){
                  return $this->render('@Contao_ThemplyBundle/_finished.html.twig', [
                       'themeName' => ucwords($_POST['form']['themes']),
                       'themeAlias' => $_POST['form']['themes'],
                       'verzeichnis' =>  $_POST['form']['verzeichnis'],
-                      'stylesheet' => $stylesheetName
+                      'stylesheet' => $generatorFeedback['stylesheetName']
                 ]);
                 
             }else{
-                return $this->render('@Contao_ThemplyBundle/_error.html.twig', [
+                return $this->render('@Contao_ThemplyBundle/_error_1.html.twig', [
                       'themeName' => ucwords($_POST['form']['themes']),
                       'themeAlias' => $_POST['form']['themes'],
                       'verzeichnis' =>  $_POST['form']['verzeichnis']
