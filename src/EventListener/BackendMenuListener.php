@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Routing\RouterInterface;
 
-#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -255)]
+#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -405)]
 class BackendMenuListener
 {
     protected $router;
@@ -37,7 +37,7 @@ class BackendMenuListener
             ->createItem('themply')
                 ->setUri($this->router->generate(BackendController::class))
                 ->setLabel('Themply')
-                ->setLinkAttribute('title', 'Title')
+                ->setLinkAttribute('title', 'Themply')
                 ->setLinkAttribute('class', 'themply')
                 ->setCurrent($this->requestStack->getCurrentRequest()->get('_controller') === BackendController::class)
         ;
