@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Routing\RouterInterface;
 
-#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -405)]
+#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -4005)]
 class BackendMenuListener
 {
     protected $router;
