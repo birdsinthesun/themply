@@ -73,6 +73,7 @@ class Generator
         if($filesystem->exists($currentDir.'/var/sass/app.output.css') === false){
             $feedbackArr['error'] = true ;
           }else{
+            $feedbackArr['error'] = false ;
             //chdir('../../../');
       // $console = shell_exec($serverPhpPath.'php82/bin/php bin/console sass:build');
    //   echo "<pre>$console</pre>";exit;
