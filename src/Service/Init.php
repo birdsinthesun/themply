@@ -13,21 +13,23 @@ class Init
       public function buildAssetFiles()
     {
         $filesystem = new Filesystem();
-          if($filesystem->exists('/public/bundles/themply/styles')=== true){
+          /*if($filesystem->exists('/public/bundles/themply/styles')=== true){
               return true;
-          }
-        chdir('../');
-        $currentDir = getcwd();
-        $assetFolderExists = $filesystem->exists($currentDir.'/public/bundles/themply');
-        $themplyAssetPath = $currentDir.'/vendor/birdsinthesun/themply/assets';
+          }*/
+       // chdir('../');
+        $currentDir = '../'.getcwd();
+        $assetFolderExists = $filesystem->exists('../public/bundles/themply');
+        $themplyAssetPath = '../vendor/birdsinthesun/themply/assets';
+        $themplyAssetPathExists = $filesystem->exists('../vendor/birdsinthesun/themply/assets');
         
-         // var_dump($currentDir,$filesystem->exists($currentDir.'/public/bundles/themply'),$_SERVER["CONTEXT_DOCUMENT_ROOT"]);exit;
+         //var_dump($currentDir,$themplyAssetPathExists);exit;
           if($assetFolderExists === true){
-                $filesystem->mirror($themplyAssetPath, $currentDir.'/public/bundles/themply');
+                $filesystem->mirror($themplyAssetPath, '../public/bundles/themply');
           }else{
-                $filesystem->mkdir($currentDir.'/public/bundles/themply');
+                $filesystem->mkdir('../public/bundles/themply');
+                $filesystem->mirror($themplyAssetPath, '../public/bundles/themply');
           }
         
-          chdir('public');
+         // chdir('public');
     }
 }
